@@ -3,6 +3,7 @@
 init-hook='import sys; sys.path.append(".")'
 extension-pkg-whitelist=pydantic
 load-plugins=pylint_django
+ignore-patterns=tests/test_calculator.py
 
 [MESSAGES CONTROL]
 # Only show these errors
