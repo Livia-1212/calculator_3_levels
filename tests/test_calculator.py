@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 '''My Calculator Test'''
 from calculator._init_ import Calculator
-=======
-'''My Test'''
 import sys
 sys.path.append('/Users/liviali/Documents/'+
                 'NJIT/Fall_2024/WebSystemDev_IS601853/'+
