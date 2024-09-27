@@ -8,7 +8,7 @@ ignore-patterns=
 [MESSAGES CONTROL]
 # Only show these errors
 # Disable the following checks (example list):
-disable=missing-class-docstring,missing-function-docstring,wrong-import-position
+disable=missing-class-docstring,missing-function-docstring,wrong-import-position, line-too-long, missing-final-newline, missing-module-docstring
 
 [REPORTS]
 # Set the output format. Available formats: text, parseable, colorized, json, msvs (visual studio) and html
