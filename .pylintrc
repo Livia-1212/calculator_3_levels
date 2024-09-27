@@ -35,21 +35,6 @@ max-public-methods=20
 
 [BASIC]
 # Variable names can be 1 to 31 characters long
-<<<<<<< HEAD
-variable-rgx=[a-z_][a-z0-9_]{0,30}$
-
-# Function names should be lowercase, with words separated by underscores as necessary to improve readability
-function-rgx=[a-z_][a-z0-9_]{2,50}$
-
-# Argument names should be lowercase, with words separated by underscores as necessary to improve readability
-argument-rgx=[a-z_][a-z0-9_]{1,30}$
-
-# Method names should be lowercase, with words separated by underscores as necessary to improve readability
-method-rgx=[a-z_][a-z0-9_]{2,50}$
-
-# Module names should have short, all-lowercase names. The use of underscores is discouraged.
-module-rgx=[a-z_][a-z0-9_]{1,30}$
-=======
 
 # Function names should be lowercase, with words separated by underscores as necessary to improve readability
 
@@ -58,6 +43,5 @@ module-rgx=[a-z_][a-z0-9_]{1,30}$
 # Method names should be lowercase, with words separated by underscores as necessary to improve readability
 
 # Module names should have short, all-lowercase names. The use of underscores is discouraged.
->>>>>>> Part2
 
 # Class names
