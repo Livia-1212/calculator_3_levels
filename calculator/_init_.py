@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 from decimal import Decimal
 from typing import Callable
 from calculator.calculations import Calculations
 from calculator.operations import add, subtract, multiply, divide
 from calculator.calculation import Calculation
+=======
+# from  .sample import add, subtract
+def add(a,b):
+    return a + b
+>>>>>>> f511910b9e5e1e76d6ee3d7cf65d6edfabdd7f48
 
 class Calculator:
     @staticmethod
