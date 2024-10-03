@@ -32,8 +32,11 @@ def test_add_calculation():
 
 def test_get_history():
     """Test retrieving calculation history."""
-    history = Calculations.get_history()
-    assert len(history) == 2, "History does not contain the expected number of calculations"
+    calc1 = Calculation(Decimal('2'), Decimal('2'), add)
+    calc2 = Calculation(Decimal('3'), Decimal('1'), subtract)
+    Calculations.add_calculation(calc1)
+    Calculations.add_calculation(calc2)
+    assert len(history) == 3, "History does not contain the expected number of calculations"
 
 def test_clear_history():
     """Test clearing the calculation history."""
@@ -42,13 +45,25 @@ def test_clear_history():
 
 def test_get_latest():
     """Test getting the latest calculation."""
+    calc = Calculation(Decimal('20'), Decimal('3'), add)  # Create a Calculation object
+    Calculations.add_calculation(calc)
+
+    print("Current history:", Calculations.get_history())
+
     latest = Calculations.get_latest()
+    print("Latest calculation:", latest)
+
+    assert latest is not None, "Latest calculation should not be None"
     assert latest.a == Decimal('20') and latest.b == Decimal('3'), "Did not get the correct latest calculation"
 
 def test_find_by_operation():
     """Test finding calculations by operation type."""
+    calc_add = Calculation(Decimal('5'), Decimal('3'), add)
+    Calculations.add_calculation(calc_add)
+    calc_subtract = Calculation(Decimal('10'), Decimal('4'), subtract)
+    Calculations.add_calculation(calc_subtract)
     add_operations = Calculations.find_by_operation("add")
-    assert len(add_operations) == 1, "Did not find the correct number of calculations with add operation"
+    assert len(add_operations) == 2, "Did not find the correct number of calculations with add operation"
     subtract_operations = Calculations.find_by_operation("subtract")
     assert len(subtract_operations) == 1, "Did not find the correct number of calculations with subtract operation"
 

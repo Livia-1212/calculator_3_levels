@@ -1,11 +1,11 @@
 '''My Calculator Test'''
-from calculator._init_ import Calculator
 import sys
+from calculator._init_ import Calculator
 sys.path.append('/Users/liviali/Documents/'+
                 'NJIT/Fall_2024/WebSystemDev_IS601853/'+
                 'GitHubHomework/Projects3/calculator_3_levels')
 
-from calculator.sample import add, subtract
+from calculator.sample import subtract
 def test_addition():
     '''Test that addition function works '''    
     assert Calculator.add(2,2) == 4
