@@ -1,8 +1,6 @@
-import sys
+from decimal import Decimal
 from typing import Callable, List
-sys.path.append('/Users/liviali/Documents/'+
-                'NJIT/Fall_2024/WebSystemDev_IS601853/'+
-                'GitHubHomework/Projects3/calculator_3_levels')
+
 from calculator.calculation import Calculation
 
 class Calculations:
@@ -22,11 +20,6 @@ class Calculations:
     def clear_history(cls):
         """Clear the history of calculations."""
         cls.history.clear()
-
-    @classmethod
-    def clear_calculation_history():
-        """Clear the calculation history before each test."""
-        Calculations.clear_history()
 
     @classmethod
     def get_latest(cls) -> Calculation:
