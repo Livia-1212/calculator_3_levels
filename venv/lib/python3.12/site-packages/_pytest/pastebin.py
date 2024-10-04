@@ -1,11 +1,10 @@
 # mypy: allow-untyped-defs
 """Submit failure or test session information to a pastebin service."""
 
-from __future__ import annotations
-
 from io import StringIO
 import tempfile
 from typing import IO
+from typing import Union
 
 from _pytest.config import Config
 from _pytest.config import create_terminal_writer
@@ -66,10 +65,10 @@ def pytest_unconfigure(config: Config) -> None:
         # Write summary.
         tr.write_sep("=", "Sending information to Paste Service")
         pastebinurl = create_new_paste(sessionlog)
-        tr.write_line(f"pastebin session-log: {pastebinurl}\n")
+        tr.write_line("pastebin session-log: %s\n" % pastebinurl)
 
 
-def create_new_paste(contents: str | bytes) -> str:
+def create_new_paste(contents: Union[str, bytes]) -> str:
     """Create a new paste using the bpaste.net service.
 
     :contents: Paste contents string.
@@ -86,7 +85,7 @@ def create_new_paste(contents: str | bytes) -> str:
             urlopen(url, data=urlencode(params).encode("ascii")).read().decode("utf-8")
         )
     except OSError as exc_info:  # urllib errors
-        return f"bad response: {exc_info}"
+        return "bad response: %s" % exc_info
     m = re.search(r'href="/raw/(\w+)"', response)
     if m:
         return f"{url}/show/{m.group(1)}"

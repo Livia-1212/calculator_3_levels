@@ -1,11 +1,17 @@
-# conftest.py
+'''conftest.py'''
+import sys
+sys.path.append('/Users/liviali/Documents/'+
+                'NJIT/Fall_2024/WebSystemDev_IS601853/'+
+                'GitHubHomework/Projects3/calculator_3_levels')
 from decimal import Decimal
 from faker import Faker
 from calculator.operations import add, subtract, multiply, divide
 
 fake = Faker()
 
-def generate_test_data(num_records):
+'''definition of generate_test_data'''
+
+def generate_test_data(num_records): 
     # Define operation mappings for both Calculator and Calculation tests
     operation_mappings = {
         'add': add,
@@ -32,7 +38,9 @@ def generate_test_data(num_records):
 
         yield a, b, operation_name, operation_func, expected
 
+# data records operation 
 def pytest_addoption(parser):
+    #To run pytest with 100 test records
     parser.addoption("--num_records", action="store", default=5, type=int, help="Number of test records to generate")
 
 def pytest_generate_tests(metafunc):
