@@ -1,10 +1,5 @@
 '''My Calculator Test'''
-import sys
-sys.path.append('/Users/liviali/Documents/'+
-                'NJIT/Fall_2024/WebSystemDev_IS601853/'+
-                'GitHubHomework/Projects3/calculator_3_levels')
-
-from calculator._init_ import Calculator # type: ignore
+from calculator import Calculator
 
 def test_addition():
     '''Test that addition function works '''    
