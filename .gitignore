@@ -10,4 +10,5 @@
 .tests/.pylintrc
 .tests/pytest.ini
 .venv
+*venv
 
