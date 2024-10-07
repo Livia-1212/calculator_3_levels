@@ -1,9 +1,8 @@
 *.sw*
 .coverage
 .pytest_cache
+*__pycache__
+.calculator___pycache__
+.tests___pycache__
+.tests
 .venv
-__pycache__/
-*.py[cod]
-
-
-
