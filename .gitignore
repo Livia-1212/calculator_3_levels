@@ -4,3 +4,7 @@
 *__pycache__
 *calculator.__pycache__
 .venv
+*venv
+.calculator/__pycache__
+.tests/__pycache__
+
