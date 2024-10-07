@@ -1,4 +1,13 @@
 *.sw*
 .coverage
+.coverage 2
 .pytest_cache
 *__pycache__
+.calculator/__pycache__
+.tests/__pycache__
+.tests/.coverage 2
+.tests/requirements.txt
+.tests/.pylintrc
+.tests/pytest.ini
+.venv
+
